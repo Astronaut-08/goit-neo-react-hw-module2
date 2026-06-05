@@ -1,6 +1,6 @@
 import styles from './Options.module.css'
 
-const Options = ({updateFeedback}) => {
+const Options = ({updateFeedback, status}) => {
     return (
         <div className={styles['options-container']}>
             <button className={styles['button']} onClick={() => updateFeedback('good')}>
@@ -12,6 +12,9 @@ const Options = ({updateFeedback}) => {
             <button className={styles['button']} onClick={() => updateFeedback('bad')}>
                 Bad
             </button>
+            {status ? <button className={styles['button']} onClick={() => updateFeedback('reset')}>
+                Reset
+            </button> : null}
         </div>
     )
 }

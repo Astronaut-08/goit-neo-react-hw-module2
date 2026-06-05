@@ -19,6 +19,15 @@ const App = () => {
   const totalFeedback = feedback.good + feedback.neutral + feedback.bad
 
   const updateFeedback = (feedbackType) => {
+    if (feedbackType === 'reset') {
+      setFeedback({
+        good: 0,
+        neutral: 0,
+        bad: 0
+      })
+      return
+    }
+    
     setFeedback((feedback) => ({
       ...feedback, [feedbackType]: feedback[feedbackType] + 1
     }))
@@ -27,7 +36,7 @@ const App = () => {
   return (
     <>
       <Description />
-      <Options updateFeedback={updateFeedback} />
+      <Options updateFeedback={updateFeedback} status={totalFeedback > 0} />
       {totalFeedback > 0 ? <Feedback obj={feedback} /> : <Notification />}
     </>
   )
