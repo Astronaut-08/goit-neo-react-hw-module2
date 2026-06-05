@@ -1,0 +1,12 @@
+.feedback-list {
+  list-style-type: none; /* Прибирає стандартні крапки списку */
+  padding: 0;
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #000000;
+}
+
+.feedback-list li p {
+  font-size: 20px;
+  margin: 12px 0; /* Контролює відстань між рядками статистики */
+}

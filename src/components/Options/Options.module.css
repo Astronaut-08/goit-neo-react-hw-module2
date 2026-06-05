@@ -1,0 +1,21 @@
+.options-container {
+  display: flex;
+  gap: 10px; /* Відстань між кнопками */
+  margin-bottom: 32px;
+}
+
+.button {
+  background-color: transparent;
+  border: 1px solid #767676;
+  border-radius: 4px;
+  padding: 6px 14px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #000000;
+}
+
+.button:hover {
+  background-color: #f0f0f0;
+}
