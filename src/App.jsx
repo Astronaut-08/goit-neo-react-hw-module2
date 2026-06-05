@@ -6,6 +6,7 @@ import './App.css'
 import Description from './components/Description/Description'
 import Feedback from './components/Feedback/Feedback'
 import Options from './components/Options/Options'
+import Notification from './components/Notification/Notification'
 
 
 const App = () => {
@@ -14,6 +15,8 @@ const App = () => {
     neutral: 0,
     bad: 0
   })
+
+  const totalFeedback = feedback.good + feedback.neutral + feedback.bad
 
   const updateFeedback = (feedbackType) => {
     setFeedback((feedback) => ({
@@ -25,7 +28,7 @@ const App = () => {
     <>
       <Description />
       <Options updateFeedback={updateFeedback} />
-      <Feedback obj={feedback} />
+      {totalFeedback > 0 ? <Feedback obj={feedback} /> : <Notification />}
     </>
   )
 }
