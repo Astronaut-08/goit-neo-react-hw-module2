@@ -27,7 +27,7 @@ const App = () => {
       })
       return
     }
-    
+
     setFeedback((feedback) => ({
       ...feedback, [feedbackType]: feedback[feedbackType] + 1
     }))
@@ -37,7 +37,7 @@ const App = () => {
     <>
       <Description />
       <Options updateFeedback={updateFeedback} status={totalFeedback > 0} />
-      {totalFeedback > 0 ? <Feedback obj={feedback} /> : <Notification />}
+      {totalFeedback > 0 ? <Feedback obj={feedback} status={totalFeedback} /> : <Notification />}
     </>
   )
 }
